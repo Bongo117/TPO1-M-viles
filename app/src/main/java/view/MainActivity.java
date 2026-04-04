@@ -5,6 +5,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.core.content.ContextCompat;
 
 import com.eskere.tp1.databinding.ActivityMainBinding;
 
@@ -57,13 +58,17 @@ public class MainActivity extends AppCompatActivity {
                 binding.rbeuros.setBackgroundResource(
                         getResources().getIdentifier("bg_radio_selected", "drawable", getPackageName())
                 );
-                binding.rbeuros.setTextColor(getResources().getColor(android.R.color.black));
+                binding.rbeuros.setTextColor(
+                        ContextCompat.getColor(this, android.R.color.black)
+                );
 
                 // estilo no seleccionado para dolares
                 binding.rbdolares.setBackgroundResource(
                         getResources().getIdentifier("bg_radio_unselected", "drawable", getPackageName())
                 );
-                binding.rbdolares.setTextColor(getResources().getColor(android.R.color.white));
+                binding.rbdolares.setTextColor(
+                        ContextCompat.getColor(this, android.R.color.white)
+                );
 
             } else {
 
@@ -71,13 +76,17 @@ public class MainActivity extends AppCompatActivity {
                 binding.rbdolares.setBackgroundResource(
                         getResources().getIdentifier("bg_radio_selected", "drawable", getPackageName())
                 );
-                binding.rbdolares.setTextColor(getResources().getColor(android.R.color.black));
+                binding.rbdolares.setTextColor(
+                        ContextCompat.getColor(this, android.R.color.black)
+                );
 
                 // estilo no seleccionado para euros
                 binding.rbeuros.setBackgroundResource(
                         getResources().getIdentifier("bg_radio_unselected", "drawable", getPackageName())
                 );
-                binding.rbeuros.setTextColor(getResources().getColor(android.R.color.white));
+                binding.rbeuros.setTextColor(
+                        ContextCompat.getColor(this, android.R.color.white)
+                );
             }
         });
 
