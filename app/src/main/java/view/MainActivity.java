@@ -43,24 +43,22 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, error, Toast.LENGTH_LONG).show();
         });
 
-        // Lógica de los RadioButtons según el campo que se toque
+        // logica de los RadioButtons segun el campo que se toque
         binding.etdolares.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
                 binding.rbeuros.setChecked(true);
-                binding.rbdolares.setEnabled(false);
-                binding.rbeuros.setEnabled(true);
-                binding.eteuros.setText(""); // Limpiamos el otro para evitar confusión
             }
         });
 
         binding.eteuros.setOnFocusChangeListener((v, hasFocus) -> {
             if (hasFocus) {
                 binding.rbdolares.setChecked(true);
-                binding.rbeuros.setEnabled(false);
-                binding.rbdolares.setEnabled(true);
-                binding.etdolares.setText(""); // Limpiamos el otro para evitar confusión
             }
         });
+
+        // Al tocar un RadioButton, el otro se deselecciona
+        binding.rbeuros.setOnClickListener(v -> binding.etdolares.requestFocus());
+        binding.rbdolares.setOnClickListener(v -> binding.eteuros.requestFocus());
 
         // boton CONVERTIR
         binding.btConvertir.setOnClickListener(v -> {
