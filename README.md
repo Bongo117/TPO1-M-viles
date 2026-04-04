@@ -24,3 +24,7 @@ La UI fue diseñada con un enfoque visual moderno inspirado en aplicaciones fina
 - Botón principal "Convertir" en blanco con texto negro y esquinas redondeadas, ubicado fijo en la parte inferior de la pantalla.
 - Botón "Guardar" en verde dentro de la card de tasa de cambio, manteniendo coherencia cromática con el resto de los elementos de acción.
 - Layout centrado verticalmente entre el contenido y el botón inferior, adaptable a distintos tamaños de pantalla.
+
+## Integrantes:
+- Grippo Federico 44752589
+- Soto Vela Luciano Ezequiel 42799718 
