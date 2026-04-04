@@ -1,13 +1,14 @@
 package view;
 
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.eskere.tp1.databinding.ActivityMainBinding;
+
+import java.util.Locale;
 
 import viewmodel.MainViewModel;
 
@@ -23,25 +24,26 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        mv=new ViewModelProvider(this).get(MainViewModel.class); // inicializamos el viewmodel
+        mv = new ViewModelProvider(this).get(MainViewModel.class); // inicializamos el viewmodel
 
         // ver la tasa de cambio
-        mv.getTasaCambio().observe(this, tasa -> {
-            binding.etResultado.setText(String.valueOf(tasa));
-        });
+        mv.getTasaCambio().observe(this, tasa ->
+                binding.etResultado.setText(String.valueOf(tasa))
+        );
 
         // para ver resultados de la conversion
-        mv.getResultadoEuros().observe(this, res -> {
-            binding.eteuros.setText(String.format("%.2f", res));
-        });
-        mv.getResultadoDolares().observe(this, res -> {
-            binding.etdolares.setText(String.format("%.2f", res));
-        });
+        mv.getResultadoEuros().observe(this, res ->
+                binding.eteuros.setText(String.format(Locale.US, "%.2f", res))
+        );
+
+        mv.getResultadoDolares().observe(this, res ->
+                binding.etdolares.setText(String.format(Locale.US, "%.2f", res))
+        );
 
         // toast para observar errores
-        mv.getMensajeError().observe(this, error -> {
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show();
-        });
+        mv.getMensajeError().observe(this, error ->
+                Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+        );
 
         // logica de los RadioButtons segun el campo que se toque
         binding.etdolares.setOnFocusChangeListener((v, hasFocus) -> {
@@ -63,7 +65,8 @@ public class MainActivity extends AppCompatActivity {
         // boton CONVERTIR
         binding.btConvertir.setOnClickListener(v -> {
             boolean aEuros = binding.rbeuros.isChecked();
-            String input = aEuros ? binding.etdolares.getText().toString()
+            String input = aEuros
+                    ? binding.etdolares.getText().toString()
                     : binding.eteuros.getText().toString();
 
             if (!input.isEmpty()) {

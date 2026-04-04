@@ -1,3 +1,18 @@
 <resources>
-    <string name="app_name">Tp1</string>
+    <string name="app_name">Conversor de Moneda</string>
+    <string name="titulo">Conversor de moneda</string>
+    <string name="label_usd">Cantidad de USD a recibir</string>
+    <string name="label_eur">Cantidad de EUR a recibir</string>
+    <string name="label_tasa">Tasa de cambio</string>
+    <string name="simbolo_dolar">$</string>
+    <string name="simbolo_euro">€</string>
+    <string name="hint_cero">0</string>
+    <string name="hint_tasa">0.00</string>
+    <string name="chip_usd">USD</string>
+    <string name="chip_eur">EUR</string>
+    <string name="label_tasa_prefijo">1$ =</string>
+    <string name="btn_guardar">Guardar</string>
+    <string name="rb_euros">Convertir a Euros</string>
+    <string name="rb_dolares">Convertir a Dólares</string>
+    <string name="btn_convertir">Convertir</string>
 </resources>
